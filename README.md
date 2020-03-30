@@ -1,7 +1,6 @@
 
 # Predicting Home Prices in Ames Iowa
 ## Albert Wong
-#### Project 2 | General Assembly | Data Science Immersive
 
 ## Contents
 
