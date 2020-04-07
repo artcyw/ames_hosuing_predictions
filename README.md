@@ -14,7 +14,11 @@
 
 ### Problem statement
 
-Ziilow is in dire need of a model to help predict Home prices in Ames Iowa.
+Predicting Home prices in Ames, Iowa was my very first modeling project. There are 4 main parts to this project, Cleaning the data, Exploratory Data Analysis, Preprocessing/Feature Engineering, and Modeling.
+
+There 4 main parts are usually the same for most Data Science projects and are repeatable. Doing this everytime create chaotic code and consume a lot of time.
+
+The solution! My own module dstools will help speed things up and keep everything clean.
 
 ### Description of data
 
@@ -22,30 +26,27 @@ Data was provided by kaggle with 80 features and 2500 rows of data.
 
 https://www.kaggle.com/c/dsi-us-9-project-2-regression-challenge/data    
 
-The goal is to train a regression model to predict housing price in Ames Iowa.
+The goal is to train a regression model to predict housing price in Ames, Iowa with dstools.
 
-After going through the data I was able to determine that overall quality, neighborhoods, most size features, year built and year remodel were all good indicators on predicting the home prices. 
+### Cleaning the Data
 
-![ames_overall.png](https://git.generalassemb.ly/artcyw/project_2/blob/master/img/ames_overall.png)
+I standardize most of the data to make it easier to process. Main attributes of the module here standardize the string to lowercase and replace string with underscore upon initializing.
 
-![ames_yearbuilt.png](https://git.generalassemb.ly/artcyw/project_2/blob/master/img/ames_yearbuilt.png)
+Method included to organize null values with a dataframe summarizing them base on each column.
 
-![ames_year_remodel.png](https://git.generalassemb.ly/artcyw/project_2/blob/master/img/ames_year_remodel.png)
+### Exploring the Data
 
-![ames_neighboorhood.png](https://git.generalassemb.ly/artcyw/project_2/blob/master/img/ames_neighborhood.png)
+Main attributes include splitting the data into nominal and numerical features. Graphing with subplots for both numerical and nominal data. Heatmap to check data for correlation. 
 
-### Model performance on training and test data
+### Preprocessing/Feature Engineer
 
-I ended up using a linear regression model after running other models including ridge and lasso. I was able to optimize the linear regression after doing many tests and some feature engineering. My model was never really overfitted and as result the lasso and ridge models were not effective.
+Easily create dummies and createPolynominal features.
 
-I was able to get my model to have a R2 score of 0.92 for the training data and 0.90 for the test data.
+### Modeling
 
-### Primary findings conclusions recommendations
+Set your pipeline steps and you are ready to test your model. With cross validation included, one easy steps to run your model multiple time and all score will be summarize.
 
-The model I ended up with performed really well with a .90 R2 score. During the process of building the model. I notice the main predictors are related to quality size year and the neighborhood. 
-
-I would recommend advising home sellers to improve their house prior to selling. These are tangible things they would be able to do to improve home price.
 
 ### Next steps
 
-This model won't work for all markets, but it will most likely fit most criteria of other markets. With the main indicator being size, quality and year of the home this will work well for all home markets. These are features I believe will be important to all home markets. There is a lot of you can take from this model to help get started on models for other markets.   
+dstools right now is built around linear regression. Need to add more attributes that will work for classification as well. More graphs can be include to exploring data.
